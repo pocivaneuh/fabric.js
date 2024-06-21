@@ -510,6 +510,7 @@
      * @chainable
      */
     setCoords: function(skipCorners) {
+      console.debug('object_geometry.setCoords');
       this.aCoords = this.calcACoords();
       // in case we are in a group, for how the inner group target check works,
       // lineCoords are exactly aCoords. Since the vpt gets absorbed by the normalized pointer.

@@ -55,6 +55,20 @@
     actionHandler: scalingEqually
   });
 
+  objectControls.rtr = new fabric.Control({
+    x: 0.4,
+    y: -0.4,
+    cursorStyleHandler: scaleStyleHandler,
+    actionHandler: function (a, b, c) { console.debug('objectControls.rtr', a, b, c) }
+  });
+
+  objectControls.rtl = new fabric.Control({
+    x: -0.4,
+    y: -0.4,
+    cursorStyleHandler: scaleStyleHandler,
+    actionHandler: function () { console.debug('objectControls.rtl') }
+  });
+
   objectControls.bl = new fabric.Control({
     x: -0.5,
     y: 0.5,

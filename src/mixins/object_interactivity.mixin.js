@@ -60,6 +60,7 @@
      * @param {Function} fn function to iterate over the controls over
      */
     forEachControl: function(fn) {
+      console.debug('object_interactivity.forEachControl', this.controls);
       for (var i in this.controls) {
         fn(this.controls[i], i, this);
       };
@@ -75,6 +76,7 @@
     _setCornerCoords: function() {
       var coords = this.oCoords;
 
+      console.debug('object_interactivity._setCornerCoords', coords);
       for (var control in coords) {
         var controlObject = this.controls[control];
         coords[control].corner = controlObject.calcCornerCoords(
@@ -232,10 +234,12 @@
       }
       this.forEachControl(function(control, key, fabricObject) {
         p = fabricObject.oCoords[key];
+        console.debug('control.getVisibility', key, control.getVisibility(fabricObject, key));
         if (control.getVisibility(fabricObject, key)) {
           if (matrix) {
             p = fabric.util.transformPoint(p, matrix);
           }
+          console.debug('control.renderCall', key, p);
           control.render(ctx, p.x, p.y, styleOverride, fabricObject);
         }
       });

@@ -202,6 +202,7 @@
      * @private
      */
     _onObjectAdded: function(object) {
+      console.debug('group.added');
       this.dirty = true;
       object.group = this;
       object._set('canvas', this.canvas);

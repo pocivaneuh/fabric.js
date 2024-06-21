@@ -55,6 +55,7 @@
      * @return {Object} thisArg
      */
     initialize: function(options) {
+      console.debug('rect.initialize');
       this.callSuper('initialize', options);
       this._initRxRy();
     },

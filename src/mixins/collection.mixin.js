@@ -18,6 +18,7 @@ fabric.Collection = {
    * @chainable
    */
   add: function () {
+    console.debug('add');
     this._objects.push.apply(this._objects, arguments);
     if (this._onObjectAdded) {
       for (var i = 0, length = arguments.length; i < length; i++) {

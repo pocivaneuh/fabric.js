@@ -775,6 +775,7 @@
      * @param {fabric.Object} obj Object that was added
      */
     _onObjectAdded: function(obj) {
+      console.debug('canvas.added');
       this.stateful && obj.setupState();
       obj._set('canvas', this);
       obj.setCoords();
@@ -1043,7 +1044,7 @@
 
     /**
      * Returns coordinates of a center of canvas.
-     * @return {fabric.Point} 
+     * @return {fabric.Point}
      */
     getCenterPoint: function () {
       return new fabric.Point(this.width / 2, this.height / 2);
